@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>For You ❤️</title>
+    <style>
+        :root {
+            --bg-color: #fbeee6;
+            --card-bg: #ffffff;
+            --primary-color: #e07a5f;
+            --text-color: #3d405b;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+            background-color: var(--bg-color);
+            color: var(--text-color);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+            padding: 20px;
+            box-sizing: border-box;
+            overflow: hidden;
+        }
+
+        .container {
+            text-align: center;
+            background: var(--card-bg);
+            padding: 40px 30px;
+            border-radius: 24px;
+            box-shadow: 0 10px 30px rgba(224, 122, 95, 0.15);
+            max-width: 350px;
+            width: 100%;
+            transition: all 0.4s ease;
+        }
+
+        .heart-icon {
+            font-size: 50px;
+            color: var(--primary-color);
+            animation: heartbeat 1.5s infinite;
+            margin-bottom: 20px;
+        }
+
+        @keyframes heartbeat {
+            0% { transform: scale(1); }
+            20% { transform: scale(1.1); }
+            40% { transform: scale(1); }
+            60% { transform: scale(1.15); }
+            80% { transform: scale(1); }
+            100% { transform: scale(1); }
+        }
+
+        h1 {
+            font-size: 24px;
+            margin-bottom: 15px;
+            font-weight: 600;
+        }
+
+        p {
+            font-size: 16px;
+            line-height: 1.6;
+            margin-bottom: 25px;
+            opacity: 0.9;
+        }
+
+        .hidden-message {
+            display: none;
+            font-size: 15px;
+            line-height: 1.6;
+            color: #555;
+            background: #fff5f2;
+            padding: 15px;
+            border-radius: 12px;
+            border-left: 4px solid var(--primary-color);
+            text-align: left;
+            margin-top: 20px;
+            animation: fadeIn 0.6s ease forwards;
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(10px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        .btn {
+            background-color: var(--primary-color);
+            color: white;
+            border: none;
+            padding: 14px 28px;
+            font-size: 16px;
+            font-weight: 600;
+            border-radius: 50px;
+            cursor: pointer;
+            box-shadow: 0 4px 15px rgba(224, 122, 95, 0.3);
+            -webkit-tap-highlight-color: transparent;
+            width: 100%;
+            transition: transform 0.1s ease;
+        }
+
+        .btn:active {
+            transform: scale(0.98);
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <div class="heart-icon">❤️</div>
+        <h1>I'm Sorry</h1>
+        <p>Hey... I really hate it when things aren't right between us, and I'm truly sorry for my mistake.</p>
+        
+        <button class="btn" onclick="revealMessage()">Tap to read my note</button>
+        
+        <!-- You can customize the exact text inside this div -->
+        <div id="note" class="hidden-message">
+            I value us more than anything else. I promise to listen better and learn from this. Let's not stay upset at each other, okay? I love you.
+        </div>
+    </div>
+
+    <script>
+        function revealMessage() {
+            var note = document.getElementById("note");
+            var button = document.querySelector(".btn");
+            
+            note.style.display = "block";
+            button.style.display = "none";
+        }
+    </script>
+
+</body>
+</html>
